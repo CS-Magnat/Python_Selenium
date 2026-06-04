@@ -5,9 +5,9 @@ class TextBoxPageLocators:
 
     FULL_NAME = (By.CSS_SELECTOR, "input[id='userName']")
     EMAIL = (By.CSS_SELECTOR, "input[id='userEmail']")
-    CURRENT_ADDRESS = (By.CSS_SELECTOR, "input[id='currentAddress']")
-    PERMANENT_ADDRESS = (By.CSS_SELECTOR, "input[id='permanentAddress']")
-    SUBMIT = By.CSS_SELECTOR, "input[id='submit']"
+    CURRENT_ADDRESS = (By.CSS_SELECTOR, "textarea[id='currentAddress']")
+    PERMANENT_ADDRESS = (By.CSS_SELECTOR, "textarea[id='permanentAddress']")
+    SUBMIT = By.CSS_SELECTOR, "button[id='submit']"
 
     CREATED_FULL_NAME = (By.CSS_SELECTOR, '#output #name')
     CREATED_EMAIL = (By.CSS_SELECTOR, '#output #email')
