@@ -1,5 +1,6 @@
 import time
 
+from generator.generator import generator_person
 from locators.elements_page_locators import TextBoxPageLocators
 from pages.base_page import BasePage
 
@@ -8,11 +9,20 @@ class TextBoxPage(BasePage):
     locators = TextBoxPageLocators()
 
     def fill_all_fields(self):
-        self.element_is_visible(self.locators.FULL_NAME).send_keys("Test")
-        self.element_is_visible(self.locators.EMAIL).send_keys("test@example.com")
-        self.element_is_visible(self.locators.CURRENT_ADDRESS).send_keys("Test")
-        self.element_is_visible(self.locators.PERMANENT_ADDRESS).send_keys("Test")
+        person_info = next(generator_person())
+
+        full_name = person_info.full_name
+        email = person_info.email
+        current_address = person_info.current_address
+        present_address = person_info.permanent_address
+
+        self.element_is_visible(self.locators.FULL_NAME).send_keys(full_name)
+        self.element_is_visible(self.locators.EMAIL).send_keys(email)
+        self.element_is_visible(self.locators.CURRENT_ADDRESS).send_keys(current_address)
+        self.element_is_visible(self.locators.PERMANENT_ADDRESS).send_keys(present_address)
         self.element_is_visible(self.locators.SUBMIT).click()
+
+        return full_name, email, current_address, present_address
 
     def check_field_form(self):
         full_name = self.element_is_visible(self.locators.CREATED_FULL_NAME).text.split(':')[1]
