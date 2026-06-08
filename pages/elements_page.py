@@ -1,3 +1,4 @@
+import random
 import time
 
 from generator.generator import generator_person
@@ -35,10 +36,24 @@ class CheckBoxPage(BasePage):
     locators = CheckBoxPageLocators()
 
     def open_full_list(self):
-        self.element_is_visible(self.locators.CHECKBOX_HOME).click()
+        self.element_is_visible(self.locators.HOME_SWITCHERS_BUTTONS).click()
+
+        self.element_is_visible(self.locators.DESKTOP_SWITCHERS_BUTTONS).click()
+
+        self.element_is_visible(self.locators.DOCUMENTS_SWITCHERS_BUTTONS).click()
+        self.element_is_visible(self.locators.WORK_SPACE_SWITCHERS_BUTTONS).click()
+        self.element_is_visible(self.locators.OFFICE_SWITCHERS_BUTTONS).click()
+
+        self.element_is_visible(self.locators.DOWNLOADS_SWITCHERS_BUTTONS).click()
+
 
     def click_random_checkbox(self):
-        item_list = self.elements_are_visible(self.locators.ITEM_LIST)
+        item_list = self.elements_are_visible(self.locators.ALL_CHECKBOXES)
+
+        for _ in range(len(item_list)):
+            item = random.choice(item_list)
+            self.go_to_element(item)
+            item.click()
 
 
 

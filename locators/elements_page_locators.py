@@ -16,7 +16,15 @@ class TextBoxPageLocators:
 
 
 class CheckBoxPageLocators:
-    SWITCHERS_BUTTONS = 'span[class ="rc-tree-switcher rc-tree-switcher_open"]'
+    HOME_SWITCHERS_BUTTONS = (By.CSS_SELECTOR,'span[class ="rc-tree-switcher rc-tree-switcher_close"]')
+
+    DESKTOP_SWITCHERS_BUTTONS = (By.XPATH,"//span[text()='Desktop']/ancestor::div[contains(@class, 'rc-tree-treenode')][1]/span[contains(@class, 'rc-tree-switcher')]")
+    DOCUMENTS_SWITCHERS_BUTTONS = (By.XPATH,"//span[text()='Documents']/ancestor::div[contains(@class, 'rc-tree-treenode')][1]/span[contains(@class, 'rc-tree-switcher')]")
+    WORK_SPACE_SWITCHERS_BUTTONS = (By.XPATH,"//span[text()='WorkSpace']/ancestor::div[contains(@class, 'rc-tree-treenode')][1]/span[contains(@class, 'rc-tree-switcher')]")
+    OFFICE_SWITCHERS_BUTTONS = (By.XPATH,"//span[text()='Office']/ancestor::div[contains(@class, 'rc-tree-treenode')][1]/span[contains(@class, 'rc-tree-switcher')]")
+    DOWNLOADS_SWITCHERS_BUTTONS = (By.XPATH,"//span[text()='Downloads']/ancestor::div[contains(@class, 'rc-tree-treenode')][1]/span[contains(@class, 'rc-tree-switcher')]")
+
     CHECKBOX_HOME = (By.CSS_SELECTOR, 'span[aria-label="Select Home"]')
     ITEM_LIST = (By.CSS_SELECTOR,'span[class ="rc-tree-title"]')
 
+    ALL_CHECKBOXES = (By.CSS_SELECTOR, 'span[class="rc-tree-checkbox"]')
