@@ -1,6 +1,8 @@
 import random
 import time
 
+from selenium.webdriver.common.by import By
+
 from generator.generator import generator_person
 from locators.elements_page_locators import TextBoxPageLocators, CheckBoxPageLocators
 from pages.base_page import BasePage
@@ -55,7 +57,21 @@ class CheckBoxPage(BasePage):
             self.go_to_element(item)
             item.click()
 
+    def get_checked_checkboxes(self):
+        checked_list = self.elements_are_present(self.locators.CHECKED_ALL_CHECKBOX)
+        data = []
+        for box in checked_list:
+            #title_item = box.find_element(By.XPATH, self.locators.TITLE_CHECKED_ALL_CHECKBOX)
+            title_item = box.find_element(*self.locators.TITLE_CHECKED_ALL_CHECKBOX)
+            data.append(title_item.text)
+        return str(data).replace(" ", "").replace("doc", "").replace(" ", "").lower()
 
+    def get_output_result(self):
+        result_list = self.elements_are_present(self.locators.OUTPUT_RESULT)
+        data = []
+        for item in result_list:
+            data.append(item.text)
+        return str(data).replace(" ", "").lower()
 
 
 
