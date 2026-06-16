@@ -36,8 +36,23 @@ class CheckBoxPageLocators:
 class RadioButtonPageLocators:
     YES_RADIOBUTTON = (By.CSS_SELECTOR, 'input[id="yesRadio"]')
     IMPRESSIVE_RADIOBUTTON = (By.CSS_SELECTOR, 'input[id="impressiveRadio"]')
-    NO_RADIOBUTTON = (By.CSS_SELECTOR, 'input[id="noRadio"]')
     OUTPUT_RESULT = (By.CSS_SELECTOR, 'span[class="text-success"]')
+
+class WebTablePageLocators:
+
+    ADD_BUTTON_BUTTON =(By.CSS_SELECTOR, 'button[id="addNewRecordButton"]')
+
+    FIRST_NAME_INPUT= (By.CSS_SELECTOR, 'input[id="firstName"]')
+    LAST_NAME_INPUT = (By.CSS_SELECTOR, 'input[id="lastName"]')
+    EMAIL_INPUT = (By.CSS_SELECTOR, 'input[id="userEmail"]')
+    AGE_INPUT = (By.CSS_SELECTOR, 'input[id="age"]')
+    SALARY_INPUT = (By.CSS_SELECTOR, 'input[id="salary"]')
+    DEPARTMENT_INPUT = (By.CSS_SELECTOR, 'input[id="department"]')
+
+    SUBMIT_BUTTON = (By.CSS_SELECTOR, 'input[id="submit"]')
+
+
+
 
 
 
