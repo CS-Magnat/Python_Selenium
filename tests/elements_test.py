@@ -43,7 +43,6 @@ class TestRadioButton:
 
 class TestWebTable:
 
-
     def test_web_table_add_person(self, driver):
         web_table_page = WebTablePage(driver, "https://demoqa.com/radio-button")
         web_table_page.open()
