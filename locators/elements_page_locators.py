@@ -49,7 +49,9 @@ class WebTablePageLocators:
     SALARY_INPUT = (By.CSS_SELECTOR, 'input[id="salary"]')
     DEPARTMENT_INPUT = (By.CSS_SELECTOR, 'input[id="department"]')
 
-    SUBMIT_BUTTON = (By.CSS_SELECTOR, 'input[id="submit"]')
+    SUBMIT_BUTTON = (By.CSS_SELECTOR, 'button[id="submit"]')
+
+    FULL_PEOPLE_LIST = (By.CSS_SELECTOR, 'table tbody tr')
 
 
 
